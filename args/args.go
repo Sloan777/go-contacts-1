@@ -32,7 +32,7 @@ func init() {
     u.Has_error(godotenv.Load(), "Failed to load .env file")
     DB_name = os_getenv( "db_name", "gocontacts.db" )
     Port = os_getenv( "port", "8000" )
-    Site_root = os_getenv( "site_root", "go-demo" )
+    Site_root = os_getenv( "site_root", "/go-demo" )
     Token_password = os_getenv( "token_password", "qpwoeiruty1029384756" )
 
     t, err := strconv.Atoi( os_getenv( "graph_complexity", "200" ) )

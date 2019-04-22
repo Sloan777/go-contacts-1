@@ -5,7 +5,6 @@ import (
     "time"
     "github.com/gorilla/mux"
     gql_handler "github.com/99designs/gqlgen/handler"
-    //"go-contacts/app"
     u "go-contacts/utils"
     "go-contacts/args"
     "go-contacts/controllers"
