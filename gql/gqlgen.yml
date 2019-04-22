@@ -1,0 +1,21 @@
+# .gqlgen.yml example
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema:
+- schema.graphql
+exec:
+  filename: generated.go
+model:
+  filename: models_gen.go
+resolver:
+  filename: resolver.go
+  type: Resolver
+models:
+  User:
+    model: go-contacts/gql.User
+  Contact:
+    model: go-contacts/gql.Contact
+  ID:
+    model: go-contacts/gql.ID

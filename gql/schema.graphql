@@ -1,0 +1,48 @@
+type User {
+    uid: ID!
+    username: String!
+    email: String!
+    contacts(limit: Int = 25, offset: Int = 0): [Contact!]!
+}
+
+type Contact {
+    cid: ID!
+    name: String!
+    phone: String!
+    address: String!
+    email: String!
+}
+
+input NewUser {
+    username: String!
+    email: String!
+    password: String!
+}
+
+input NewContact {
+    name: String!
+    phone: String!
+    address: String!
+    email: String!
+}
+
+input ContactUpdate {
+    cid: ID!
+    name: String!
+    phone: String!
+    address: String!
+    email: String!
+}
+
+type Mutation {
+    createUser(input: NewUser!): User!
+    addContacts(input: [NewContact!]!): [ID]! @isAuthenticated
+    deleteContacts(input: [ID!]!): [ID]! @isAuthenticated
+    updateContacts(input: [ContactUpdate!]!): [ID]! @isAuthenticated
+}
+
+type Query {
+    user: User!
+}
+
+directive @isAuthenticated on FIELD_DEFINITION
